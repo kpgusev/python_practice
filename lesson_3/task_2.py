@@ -17,5 +17,7 @@ def validate(password):
 
 is_valid, errors = validate(input())
 while not is_valid:
-    print(errors)
+    for error, is_not_error in errors.items():
+        if not is_not_error:
+            print(error)
     is_valid, errors = validate(input('Try again: '))
